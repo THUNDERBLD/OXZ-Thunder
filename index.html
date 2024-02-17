@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .play {
+            transition: all .4s cubic-bezier(1, 0, 0, 1);
+        }
+        .palg {
+            transform: rotateX(720deg);
+        }
+
+        ::-webkit-scrollbar{
+            width: 5px;
+            height: 0.5px;
+        }
+        ::-webkit-scrollbar-track{
+            background: rgb(16, 194, 0);
+        }
+        ::-webkit-scrollbar-thumb{
+            border: 10px solid rgb(0, 0, 0);
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        @media only screen and (max-width: 600px) {
+        .timing {
+        bottom: 40px;
+        left: 140px;
+            }
+        }
+        li li{
+            /* border: 2px solid; */
+            padding: 2px 0px;
+            border-radius: 3px;
+            text-align: center;
+            margin: 5px;
+            box-shadow: 2px 2px 5px rgb(255, 255, 255) inset;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 480px) {
+        .popup3{
+            width: 100%;
+            /* width: 75%; */
+        }
+}
+    </style>
+
+</head>
+<body class="bg-black flex text-white">
+    <div class="left bl m-3 border-white rounded-lg overflow-hidden lg:overscroll-none hidden sm:block absolute sm:relative " style="z-index: 2; width: 30%; height: 90vh;">
+        <div class="upper rounded-lg p-2 " style="height: 206px; background-color: #121212; box-shadow: 2px 2px 8px rgb(145, 255, 0);">
+            <div class="oxzLogo OxzInfo p-3 flex a rounded-lg bg-black cursor-pointer "style=" box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+                <div>
+                    <svg width="93" height="52" viewBox="0 0 153 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="76" y="28" width="77" height="19" rx="4" fill="white"/>
+                        <path d="M90.6156 33.7656V32.0625H97.3813V33.7656H94.8813V43H93.1313V33.7656H90.6156ZM99.0719 43V32.0625H100.822V36.6406H101.853V38.3438H100.822V43H99.0719ZM102.681 38.3438V36.6406H103.713V32.0625H105.463V43H103.713V38.3438H102.681ZM107.419 39.9844V32.0625H109.169V39.9844C109.179 40.5677 109.497 40.9844 110.122 41.2344C110.278 41.2969 110.408 41.3281 110.513 41.3281V43.0781C109.919 43.0781 109.32 42.8698 108.716 42.4531C107.861 41.8385 107.429 41.0156 107.419 39.9844ZM111.325 43.0781V41.3281C111.596 41.3281 111.877 41.2135 112.169 40.9844C112.492 40.7135 112.658 40.3802 112.669 39.9844V32.0625H114.403V39.9844C114.403 41.1615 113.882 42.0417 112.841 42.625C112.309 42.9271 111.804 43.0781 111.325 43.0781ZM116.406 43V34.8438H116.531L118.156 37.4531V43H116.406ZM116.406 33.1875V32.0625H117.859L123.359 40.8906V43H122.516L116.406 33.1875ZM121.609 36.625V32.0625H123.359V39.2344H123.234L121.609 36.625ZM125.456 43V32.0625H127.206V43H125.456ZM128.019 43V41.2656C129.217 41.2656 129.826 40.8281 129.847 39.9531C129.847 39.9427 129.847 39.9323 129.847 39.9219V35.1406C129.847 34.5156 129.498 34.1042 128.8 33.9062C128.56 33.8333 128.3 33.7969 128.019 33.7969V32.0625C129.352 32.0625 130.347 32.5 131.003 33.375C131.389 33.8958 131.581 34.4844 131.581 35.1406V39.9219C131.581 41.3698 130.899 42.3177 129.534 42.7656C129.066 42.9219 128.56 43 128.019 43ZM133.631 43V32.0625H139.319V33.7812H135.381V36.6875H137.85V38.4375H135.381V41.2656H139.319V43H133.631ZM141.384 43V32.0625H143.134V43H141.384ZM143.931 38.3906V36.8281H144.806C145.713 36.8281 146.213 36.3958 146.306 35.5312C146.317 35.4375 146.322 35.349 146.322 35.2656C146.322 34.3906 145.926 33.875 145.134 33.7188C144.989 33.6979 144.838 33.6875 144.681 33.6875H143.931V32.0625H144.884C146.27 32.0938 147.202 32.6094 147.681 33.6094C147.879 34.026 147.978 34.5052 147.978 35.0469C147.968 36.2031 147.614 37.0417 146.916 37.5625C147.457 37.875 147.801 38.4323 147.947 39.2344C147.968 39.3698 147.983 39.4948 147.994 39.6094L148.259 43H146.634L146.4 40.2188C146.317 39.3438 146.082 38.7917 145.697 38.5625C145.468 38.4479 145.181 38.3906 144.838 38.3906H143.931Z" fill="black"/>
+                        <path d="M30.1836 4.50122C28.9347 1.49173 25.4864 -0.00670886 22.6259 1.55348C15.4477 5.46859 9.49964 11.2547 5.4948 18.3014C0.53902 27.0213 -1.13448 37.1318 0.759454 46.9103C2.65338 56.6888 7.99756 65.5302 15.8814 71.9281C23.7652 78.326 33.7009 81.8845 43.9956 81.9972C54.2902 82.11 64.3069 78.7701 72.3388 72.5465C80.3707 66.323 85.9209 57.6009 88.0437 47.8664C90.1666 38.1319 88.7307 27.9873 83.9808 19.1611C80.1418 12.0277 74.3301 6.11218 67.2445 2.0408C64.4215 0.418735 60.9434 1.83744 59.626 4.81478L58.9674 6.30321C57.603 9.38679 59.0938 12.9448 61.8928 14.8251C65.9218 17.5318 69.241 21.1568 71.5332 25.416C74.7855 31.4594 75.7687 38.4056 74.3151 45.071C72.8616 51.7363 69.0613 57.7085 63.5617 61.9699C58.0621 66.2313 51.2035 68.5182 44.1546 68.441C37.1057 68.3637 30.3025 65.9272 24.9043 61.5464C19.5061 57.1657 15.8469 51.1118 14.5501 44.4163C13.2533 37.7208 14.3992 30.798 17.7925 24.8273C20.1857 20.6164 23.5923 17.0629 27.6878 14.4446C30.5266 12.6298 32.0961 9.10979 30.8046 5.99776L30.1836 4.50122Z" fill="white"/>
+                        <rect width="49.7649" height="5.73077" rx="2.86538" transform="matrix(0.736974 0.675921 -0.700474 0.713678 21.2212 25.4)" fill="white"/>
+                        <rect width="49.682" height="5.69352" rx="2.84676" transform="matrix(0.732682 -0.680571 0.704991 0.709217 21.3448 47.2122)" fill="white"/>
+                        <rect x="50" y="32" width="21" height="4" rx="2" fill="white"/>
+                        <rect x="51" y="46" width="20" height="4" rx="2" fill="white"/>
+                        <rect width="24.4802" height="3.48391" rx="1.74195" transform="matrix(0.764096 -0.645102 0.670397 0.742002 50.3779 47.6984)" fill="white"/>
+                    </svg>
+                </div>
+                <div class=" p-2 text-lg font-semibold">OXZ</div>
+            </div>
+
+            <div class="home blurr p-3 a flex rounded-lg bg-black my-1 cursor-pointer" style=" box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;"> 
+                <div class="p-1">
+                    <svg width="19" height="27" viewBox="0 0 19 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="14" cy="3" r="3" fill="white"/>
+                        <circle cx="16" cy="15" r="3" transform="rotate(180 16 15)" fill="white"/>
+                        <circle cx="3.5" cy="10.5" r="2.5" fill="white"/>
+                        <circle cx="4" cy="23" r="4" fill="white"/>
+                        <rect width="1.79187" height="12.535" transform="matrix(0.582171 0.813066 -0.811947 0.583731 13.0322 2.73376)" fill="white"/>
+                        <rect width="1.79187" height="12.535" transform="matrix(-0.582171 -0.813066 0.811947 -0.583731 5.96783 23.1188)" fill="white"/>
+                        <rect width="1.79262" height="12.5297" transform="matrix(-0.363099 0.93175 -0.931251 -0.364379 16.0034 14.4276)" fill="white"/>
+                        </svg>
+                </div>
+                <div class="px-2 text-lg font-semibold">HIRE ME, NOW!!</div>
+            </div>
+
+            <div class="search p-3 a flex rounded-lg bg-black cursor-pointer" style=" box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+                    <div class="p-1">
+                        <svg width="24" height="22" viewBox="0 0 26 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" transform="matrix(-1 0 0 1 20 0)" fill="white"/>
+                            <circle cx="7" cy="7" r="7" transform="matrix(-1 0 0 1 17 3)" fill="black"/>
+                            <rect x="16.7925" y="14" width="12" height="2.77259" rx="1.38629" transform="rotate(40.2776 16.7925 14)" fill="white"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="px-2 text-lg font-semibold">SEARCH</div>
+                    </div>
+            </div>
+            <div>
+                <input class="search2 animate-pulse hidden rounded-lg h-12 border w-full bg-gray-800 py-1 px-3" type="text" placeholder="Search">
+            </div>
+                    
+        </div>
+        <div class="lower">
+            <div class="libLogo p-3 flex">
+                <div class="p-1">
+                    <svg width="18" height="22" viewBox="0 0 20 25" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0H2C3.10457 0 4 0.895431 4 2V25H0V0Z" fill="white"/>
+                        <path d="M5 0H8C9.10457 0 10 0.895431 10 2V25H5V0Z" fill="white"/>
+                        <path d="M11 0C15.9706 0 20 4.02944 20 9V25H11V0Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="px-2 text-lg font-semibold">YOUR LIBRARY</div>
+            </div>  
+            <div class="songList md:pl-4 md:w-64 flex flex-col rounded-lg p-1" style=" width: 100%; height: 330px; box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+              <ul class="p-1">
+                <li style="list-style-type: none; width: 100%; height: 315px; box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;" class="innerSong my-1 lg:w-64 rounded overflow-auto p-2" >
+                    
+                 </li>                     
+               </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="right w-full">
+        <div class="head bl flex p-2 bg-gray-800 rounded-lg justify-between" style=" background-color: black; box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+            <div class="flex justify-center align-middle">
+                <div class="slide1 hidden mx-1 a cursor-pointer flex justify-center p-2 border-black rounded-3xl bg-black" style=" box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+                    <svg width="14" height="15" viewBox="0 0 13 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.996 26.1044L1.84126 14.4254C1.55104 14.0552 1.55812 13.5327 1.85827 13.1704L11.7058 1.28587" stroke="white" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="slide2 mx-1 block lg:hidden a cursor-pointer flex justify-center p-2 border-black rounded-3xl bg-black" style=" box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+                    <svg width="14" height="15" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.70984 26.1044L11.8646 14.4254C12.1548 14.0552 12.1477 13.5327 11.8475 13.1704L2.00005 1.28587" stroke="white" stroke-width="3"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex ">
+                <div class="bug a p-1 cursor-pointer rounded-lg bg-black text-md mx-2 " style="box-shadow: 2px 2px 4px rgb(77, 255, 23) ;">
+                    BugReport
+                </div>                  
+                <div class="about a p-1 cursor-pointer rounded-lg bg-black text-md mx-2" style="box-shadow: 2px 2px 4px rgb(77, 255, 23) ;">
+                    AboutMe
+                </div>                  
+                <!-- <div class="support a p-1 cursor-pointer rounded-lg bg-black text-md mx-2" style="box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;">
+                    Support
+                </div>  -->
+            </div>
+        </div>
+
+        <div class="popup3 hidden absolute p-4 bg-white overflow-auto sm:my-20 sm:mx-10 rounded-2xl" style="z-index: 10; height: 65vh; background: rgb(0, 0, 0);">
+            <div>
+                <svg class="cross3 block cursor-pointer" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="5" fill="black"/>
+                    <rect x="2" y="2" width="18" height="18" rx="4" fill="white"/>
+                    <rect x="6.74683" y="5.5" width="13.4839" height="1.83333" rx="0.916667" transform="rotate(42.8507 6.74683 5.5)" fill="black"/>
+                    <rect width="13.4839" height="1.83333" rx="0.916667" transform="matrix(-0.733129 0.68009 0.68009 0.733129 15.3854 5.5)" fill="black"/>
+                </svg>
+            </div>
+            <div class="rockSongs ">
+
+            </div>
+        </div>
+        <!-- <div class="popup4 hidden absolute p-4 bg-white overflow-auto sm:my-20 sm:mx-10 rounded-2xl" style="z-index: 10; height: 65vh; background: rgb(0, 0, 0);">
+            <div>
+                <svg class="cross3 block cursor-pointer" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="5" fill="black"/>
+                    <rect x="2" y="2" width="18" height="18" rx="4" fill="white"/>
+                    <rect x="6.74683" y="5.5" width="13.4839" height="1.83333" rx="0.916667" transform="rotate(42.8507 6.74683 5.5)" fill="black"/>
+                    <rect width="13.4839" height="1.83333" rx="0.916667" transform="matrix(-0.733129 0.68009 0.68009 0.733129 15.3854 5.5)" fill="black"/>
+                </svg>
+            </div>
+            <div class="LightSongs ">
+
+            </div>
+        </div> -->
+        
+        <div class="rightMid flex-wrap rounded-2xl my-1 overflow-auto md:h-96" style="background-color: #0000008f; height: 90vh; box-shadow: 2px 2px 5px rgb(77, 255, 23) inset;" >    
+            <div class="popup2 absolute hidden overflow-auto text-black w-96 h-80 p-2 bg-white rounded-2xl" style="width: 70%; margin: 50px; z-index: 20;">
+                <div class="p-2">
+                    <svg class="cross2 block cursor-pointer" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="22" height="22" rx="5" fill="black"/>
+                        <rect x="2" y="2" width="18" height="18" rx="4" fill="white"/>
+                        <rect x="6.74683" y="5.5" width="13.4839" height="1.83333" rx="0.916667" transform="rotate(42.8507 6.74683 5.5)" fill="black"/>
+                        <rect width="13.4839" height="1.83333" rx="0.916667" transform="matrix(-0.733129 0.68009 0.68009 0.733129 15.3854 5.5)" fill="black"/>
+                        </svg>
+                </div>
+                <div class="bugg text-lg hidden font-semibold px-3">This feature will available soon, till then Please send the mail to <p class="text-blue-400">Ayandragon9@gmail.com for Bug Report.</p> </div>
+                <div class="aboutME overflow-auto ">
+<h3 class="text-2xl">
+    👨‍💻 Faraz Mohammed
+</h3>
+
+<h3 class="text-2xl">
+    🎓 Education:
+</h3>
+<p class="pb-2">
+    Pursuing Bachelor of Technology (B.Tech) in Computer Science Engineering with a specialization in Artificial Intelligence and Machine Learning from Vellore Institute of Technology (VIT).
+</p>
+
+<h3 class="text-2xl">
+    💼 Technical Skills:
+</h3>
+<p class="pb-2">
+    Proficient in web development using the MERN (MongoDB, Express.js, React.js, Node.js) stack.
+    Experienced in graphic design using tools such as Figma, Canva, and Photoshop.
+    Knowledgeable in HTML, CSS, JavaScript, and related front-end technologies.
+    Skilled in back-end development with Node.js and Express.js.
+    Familiarity with database management using MongoDB.
+    Understanding of AI and ML concepts, including data preprocessing, model building, and evaluation.
+</p>
+
+<h3 class="text-2xl">
+        🎨 Graphic Design Skills:
+</h3>
+<p class="pb-2">
+    Proficient in creating visually appealing designs using Figma, Canva, and Photoshop.
+    Skilled in UI/UX design principles, wireframing, and prototyping.
+    Ability to translate concepts and ideas into creative and engaging visuals.
+</p>
+
+<h3 class="text-2xl">
+    💻 Projects:
+</h3>
+<p class="pb-4">
+    <p class="font-semibold">
+        OXZ Thunder Music Streaming Platform
+    </p>
+    Developed a responsive and user-friendly music streaming platform using pure HTML, Tailwind CSS, and vanilla JavaScript for dynamic functionality.
+    Implemented features such as user authentication, personalized song recommendations.
+    Utilized Tailwind CSS for efficient styling and layout design, ensuring a visually appealing and consistent user interface across devices.
+</p>
+<p class="pb-4">
+    <p class="font-semibold">
+        Netflix Clone
+    </p>
+    Created a replica of the Netflix streaming platform to showcase proficiency in front-end development and UI/UX design.
+    Designed a responsive and visually appealing user interface using HTML and Tailwind CSS for streamlined styling and layout.
+    Integrated features such as user authentication, dynamic content loading, and carousel sliders to mimic the functionality of the original Netflix website.
+</p>
+<p class="pb-4">
+    <p class="font-semibold">
+        Microsoft Website Clone
+    </p>
+    Developed a clone of the Microsoft website to demonstrate expertise in web development and graphic design.
+    Utilized HTML and Tailwind CSS for efficient styling and layout design, ensuring compatibility with modern web standards.
+    Implemented responsive design techniques to optimize the website for various screen sizes and devices, enhancing user accessibility and engagement.
+</p>
+<p class="pb-4">
+    <p class="font-semibold">
+        GUI for Chemical Kinetics Problem Solver
+    </p>
+    Designed a graphical user interface (GUI) using Tkinter Python for solving chemical kinetics problems, showcasing proficiency in Python GUI development.
+    Implemented functionalities for inputting reaction parameters, selecting reaction mechanisms, and displaying kinetic data using Python's scientific libraries.
+    Integrated numerical methods and algorithms to calculate reaction rates, concentrations, and reaction progress, demonstrating strong problem-solving skills in scientific computing.
+</p>
+
+<h3 class="text-2xl">
+    🎮 Hobbies and Interests:
+</h3>
+<p>
+    Enthusiastic about playing online games, showcasing strategic thinking, teamwork, and problem-solving skills.
+    Avid anime fan, with a passion for exploring diverse genres and narratives.
+</p>
+
+<h3 class="text-2xl">
+    🌟 Summary:
+</h3>
+<p>
+I am dedicated B.Tech student specializing in AI and ML, with expertise in MERN stack web development and graphic design. With a keen interest in technology and creative design, I brings a unique blend of skills and enthusiasm to any project or team.
+</p>
+
+                </div>
+            </div>
+            
+            <div class="popup hidden overflow-auto absolute text-black h-96 bg-white rounded-2xl" style="width: 60%; margin: 50px; z-index: 20;">
+                <div class="p-2">
+                    <svg class="cross block cursor-pointer" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="22" height="22" rx="5" fill="black"/>
+                        <rect x="2" y="2" width="18" height="18" rx="4" fill="white"/>
+                        <rect x="6.74683" y="5.5" width="13.4839" height="1.83333" rx="0.916667" transform="rotate(42.8507 6.74683 5.5)" fill="black"/>
+                        <rect width="13.4839" height="1.83333" rx="0.916667" transform="matrix(-0.733129 0.68009 0.68009 0.733129 15.3854 5.5)" fill="black"/>
+                        </svg>
+                </div>
+                <div class="infoOxz p-3 hidden">
+                    <h2 class="font-semibold text-lg">
+                        🎵 Introducing OXZ Thunder: Your Ultimate Music Streaming Destination! 🎵
+                    </h2>
+                    <p class="pb-2">
+                        Are you ready to immerse yourself in a world of melodious magic?
+                        Look no further than OXZ Thunder – the brainchild of the visionary creator, Faraz Mohammed, 
+                        currently pursuing a B.Tech in Computer Science specializing in AI and ML from Vellore Institute
+                         of Technology.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🌟 What is OXZ Thunder?
+                    </h2>
+                    <p class="pb-2">
+                        OXZ Thunder isn't just another music streaming platform; it's a symphony of innovation, offering an 
+                        eclectic mix of songs spanning various genres. 
+                        Whether you're a fan of heart-pounding rock, mesmerizing anime tunes, or infectious K-pop beats, 
+                        OXZ Thunder has something for everyone.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🎸 Rock Out to Your Favorite Tunes
+                    </h2>
+                    <p class="pb-2">
+                        Indulge your inner rockstar with our extensive collection of rock classics and contemporary hits. 
+                        From legendary bands to emerging artists, OXZ Thunder brings you the best of the rock genre, 
+                        guaranteed to get your adrenaline pumping.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🎌 Anime Anthems Galore
+                    </h2>
+                    <p class="pb-2">
+                        Transport yourself to the vibrant world of anime with OXZ Thunder's diverse selection of anime songs. 
+                        Whether you're reliving the nostalgia of your favorite childhood series or discovering new tracks from the latest anime sensations, our platform is your gateway to musical bliss.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        💃 K-pop Extravaganza
+                    </h2>
+                    <p class="pb-2">
+                        Experience the global phenomenon that is K-pop like never before. 
+                        With OXZ Thunder, you can groove to the infectious rhythms of your favorite K-pop idols, explore lesser-known gems,
+                        and stay up-to-date with the latest hits from the Korean music scene.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🎧 Chill Vibes for Relaxation
+                    </h2>
+                    <p class="pb-2">
+                        Unwind and relax with OXZ Thunder's curated collection of chill beats. 
+                        Whether you're looking to decompress after a long day or create the perfect ambiance for a cozy evening in, our selection of chill music is sure to soothe your soul.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🔍 Discover, Share, and Connect
+                    </h2>
+                    <p class="pb-2">
+                        Explore new horizons with OXZ Thunder's intuitive discovery features, designed to help you unearth hidden musical gems. 
+                        Share your favorite tracks with friends, connect with fellow music enthusiasts, and embark on a journey of musical exploration like never before.
+                    </p>
+                    <h2 class="font-semibold text-lg">
+                        🎶 Let the Music Take You Away
+                    </h2>
+                    <p class="pb-2">
+                        With OXZ Thunder, the possibilities are endless. 
+                        So why wait? Dive into a world of music, passion, and creativity – join us on OXZ Thunder and let the 
+                        music take you away!
+                    </p>
+                </div>
+                <div class="personalInfo ">
+                    <div class="p-3 text-2xl font-semibold">
+                        Socail Media
+                    </div> 
+                    <div class="hire p-3 flex">
+                        <h2 class="text-lg">Email |</h2>
+                        <p class="text-lg px-2 text-blue-400"> Ayanalihaider9@gmail.com</p>
+                    </div>
+                    <div class="hire p-3 flex">
+                        <h2 class="text-lg">Current PortFolio |</h2>
+                        <a class="text-lg px-2 text-blue-400" href="https://farazmohammed9.wordpress.com/" target="_blank">Visit</a>
+                    </div>
+                    <div class="hire p-3 flex">
+                    <h2 class="text-lg">LinkedIN | </h2>
+                    <a class="text-lg px-2 text-blue-400" href="https://www.linkedin.com/in/faraz-mohammed-162289227/" target="_blank">Check Out</a>
+                </div>
+                <div class="hire p-3 flex">
+                    <h2 class="text-lg">Instagram | </h2>
+                    <a class="text-lg px-2 text-blue-400" href="https://www.instagram.com/thunder_blood_9/?hl=en" target="_blank">Click</a>
+                </div>
+                <div class="hire p-3 flex">
+                    <h2 class="text-lg">GitHub | </h2>
+                    <a class="text-lg px-2 text-blue-400" href="https://github.com/THUNDERBLD" target="_blank">See The Projects</a>
+                   </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="SpotifyPlaylist bl p-3 text-2xl font-semibold rounded-lg " >
+                OXZ THUNDER PlayList
+            </div>
+            <div class="oxzCard bl p-4 lg:flex flex-wrap lg:justify-center ">
+                <div class="rock a m-2 w-80 cursor-pointer shadow-inner h-96 p-10 rounded-2xl" style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.JEpF2zsxoUhPcek0.O5O?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold  my-1" style="text-shadow: 2px 2px 5px black;" >Rock Music</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)">Boost Up Yourself Using Rock Songs, Music and Beats....</div>
+                </div>
+                <div class="light a m-2 w-80 cursor-pointer h-96 p-10 rounded-2xl shadow-lg" style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.EEdQQ5Edym46mCKeNdqt?pid=ImgGn" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold my-1" style="text-shadow: 2px 2px 5px black;" >Light Music</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)">Just Relax Your Mind and Release the Stress....</div>
+                </div>
+                <div class="gaming a m-2 w-80 cursor-pointer h-96 p-10 rounded-2xl" style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.k5Xq97o122EbQ3gPuwms?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold my-1" style="text-shadow: 2px 2px 5px black;" >Gaming Music</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)">Give a Killing HeadShort Using the Power of Music....</div>                 
+                </div>
+                <div class="chills a m-2 w-80 cursor-pointer h-96 p-10 rounded-2xl " style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.yQ.470x19uiNkN4zds0E?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold my-1" style="text-shadow: 2px 2px 5px black;">Chills Music</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)" >Calm Down And Chill YourSelf, Stressed Mind can't Work....</div>
+                </div>
+                <div class="K-pop a m-2 w-80 cursor-pointer h-96 p-10 rounded-2xl" style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.9tx4bbZYEyRSCUGLjTVq?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold my-1" style="text-shadow: 2px 2px 5px black;" >Korea-pop</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)">Just Some Korean Pop Music Playlist....</div>
+                </div>
+                <div class="Anime a m-2 w-80 cursor-pointer h-96 p-10 rounded-2xl " style="background-color: #ffffff; box-shadow: 2px 2px 10px rgb(255, 255, 255) ;">
+                    <div class="img w-60">
+                        <img src="https://th.bing.com/th/id/OIG.NlNpXXN9Z.EGCC0eqkzJ?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+                    </div>
+                    <div class="title text-center text-black font-semibold my-1" style="text-shadow: 2px 2px 5px black;">Anime Music</div>
+                    <div class="Description text-gray-400 rounded-lg bg-black p-2" style="box-shadow: 4px 4px 8px rgb(0, 0, 0)">Every Cool Anime Opening and Ending, Exists Here.... </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightBottom hidden delay-1000"">
+            <div class="fixedPlay rounded-lg h-22 bg-white " style="background-color: black; box-shadow: 2px 2px 8px rgb(77, 255, 23) inset;">
+                <div class="seekBar cursor-pointer bg-gray-600 rounded relative" style="height: 4px; min-width: 60%; margin: auto; background-color: rgb(0, 0, 0); box-shadow: 2px 2px 4px rgb(136, 255, 0) inset;"">
+                    <div class="circle absolute rounded-lg -top-2" style="background-color: rgb(255, 255, 255); box-shadow: 2px 2px 8px rgb(60, 255, 0) inset;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8" r="8" fill=""/>
+                        </svg>                                                
+                    </div>
+                </div>
+                    <!-- <div class="h-4 p-1"></div> -->
+                    
+                <div class=" flex justify-between relative">
+                    <div class="name h-22 overflow-auto lg:font-semibold lg:text-lg p-3">Thunder</div>
+                    
+                <div class="flex px-12 pt-3 lg:p-1">
+                    <div class="backword a cursor-pointer mx-2 py-6 ">
+                        <svg width="28" height="20" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.93605 5.65179C0.183516 6.02065 0.193421 7.09695 0.952641 7.45443L11.0857 12.2256C11.7524 12.5396 12.5172 12.05 12.5104 11.3135L12.4212 1.61926C12.4144 0.882769 11.6408 0.404772 10.9798 0.728723L0.93605 5.65179Z" fill="white"/>
+                            <path d="M12.936 5.65179C12.1835 6.02065 12.1934 7.09695 12.9526 7.45443L23.0857 12.2256C23.7524 12.5396 24.5172 12.05 24.5104 11.3135L24.4212 1.61926C24.4144 0.882769 23.6408 0.404772 22.9798 0.728723L12.936 5.65179Z" fill="white"/>
+                            </svg>                                
+                    </div>
+                    <div class="play1">
+                        <div class="play cursor-pointer mx-2 py-4">
+                            <svg width="40" height="35" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3672 6.76967C16.8745 7.50816 16.8565 9.66277 15.3372 10.3761L3.14413 16.1006C1.81124 16.7264 0.28198 15.746 0.294237 14.2735L0.391218 2.62233C0.403474 1.1499 1.94884 0.195094 3.27113 0.842973L15.3672 6.76967Z" fill="white"/>
+                            </svg>                                                
+                        </div>
+                        <div class="pause absolute hidden cursor-pointer mx-2 py-4">
+                            <svg width="40" height="35" viewBox="0 0 11 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="4" height="16" rx="1" fill="white"/>
+                                <rect x="7" width="4" height="16" rx="1" fill="white"/>
+                            </svg>                                
+                        </div>
+                    </div>
+                    <div class="forword a cursor-pointer mx-2 py-6" style="transition:all .4s cubic-bezier(1, 0, 0, 1)";>
+                        <svg width="28" height="20" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.064 5.65179C24.8165 6.02065 24.8066 7.09695 24.0474 7.45443L13.9143 12.2256C13.2476 12.5396 12.4828 12.05 12.4896 11.3135L12.5788 1.61926C12.5856 0.882769 13.3592 0.404772 14.0202 0.728723L24.064 5.65179Z" fill="white"/>
+                            <path d="M12.064 5.65179C12.8165 6.02065 12.8066 7.09695 12.0474 7.45443L1.91433 12.2256C1.24755 12.5396 0.482814 12.05 0.489593 11.3135L0.57882 1.61926C0.585599 0.882769 1.35924 0.404772 2.02015 0.728723L12.064 5.65179Z" fill="white"/>
+                            </svg>     
+                    </div>
+                </div>
+                    <div class="lg:flex lg:p-3">
+                        <div class="download a cursor-pointer p-2" style="transition:all .4s cubic-bezier(1, 0, 0, 1);">
+                            <svg width="26" height="26" viewBox="0 0 28 29" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="9" width="10" height="14" rx="2" fill="white"/>
+                                <path d="M14.3292 24.8354C13.9319 25.4057 13.088 25.4064 12.6894 24.8367L4.64431 13.3394C4.18073 12.6769 4.65399 11.767 5.46247 11.7663L21.5269 11.7531C22.3354 11.7524 22.8107 12.6616 22.3486 13.3249L14.3292 24.8354Z" fill="white"/>
+                                <rect y="22" width="3" height="5" fill="white"/>
+                                <rect x="25" y="22" width="3" height="5" fill="white"/>
+                                <rect y="26" width="28" height="3" fill="white"/>
+                            </svg>                                                                                          
+                        </div>             
+                        <div class="volume lg:py-2 py-4 cursor-pointer p-2" style="transition:all .4s cubic-bezier(1, 0, 0, 1)">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="15" cy="15" r="15" fill="white"/>
+                                <path d="M28 15C28 22.1797 22.1797 28 15 28C7.8203 28 2 22.1797 2 15C2 7.8203 7.8203 2 15 2C22.1797 2 28 7.8203 28 15Z" fill="#121212"/>
+                                <path d="M13.66 23.7665C13.8433 23.9473 14.0893 24.0504 14.3468 24.0544L15.9454 24.079C16.4976 24.0875 16.9522 23.6467 16.9607 23.0945L17.1903 8.18383C17.1988 7.63162 16.7581 7.17706 16.2058 7.16855L14.6004 7.14383C14.347 7.13992 14.1016 7.23237 13.9138 7.40248L5.91603 14.6452C5.49023 15.0308 5.47609 15.695 5.88509 16.0984L13.66 23.7665Z" fill="white"/>
+                                <path d="M4 11C4 10.4477 4.44772 10 5 10H7C7.55228 10 8 10.4477 8 11V20C8 20.5523 7.55228 21 7 21H5C4.44772 21 4 20.5523 4 20V11Z" fill="white"/>
+                                <path d="M19.0154 19.953C19.5498 19.957 20.0798 19.8425 20.5742 19.6161C21.0686 19.3897 21.5175 19.056 21.8946 18.6346C22.2717 18.2132 22.5694 17.7126 22.7702 17.162C22.9711 16.6114 23.0711 16.022 23.0644 15.4282C23.0576 14.8345 22.9443 14.2485 22.731 13.7044C22.5177 13.1604 22.2087 12.6693 21.8222 12.2599C21.4356 11.8506 20.9793 11.5312 20.48 11.3205C19.9806 11.1098 19.4483 11.0121 18.9141 11.033L18.9541 12.3543C19.33 12.3396 19.7046 12.4084 20.0559 12.5567C20.4073 12.7049 20.7284 12.9296 21.0004 13.2177C21.2723 13.5057 21.4898 13.8513 21.6398 14.2341C21.7899 14.6169 21.8697 15.0293 21.8744 15.447C21.8792 15.8648 21.8088 16.2795 21.6675 16.667C21.5261 17.0544 21.3166 17.4067 21.0513 17.7032C20.786 17.9997 20.4701 18.2345 20.1222 18.3938C19.7743 18.5531 19.4015 18.6337 19.0254 18.6308L19.0154 19.953Z" fill="white"/>
+                                <path d="M19.0042 22.5821C20.0882 22.6752 21.1785 22.5477 22.202 22.2081C23.2255 21.8684 24.1587 21.3245 24.9388 20.6127C25.7189 19.901 26.328 19.038 26.7252 18.0814C27.1224 17.1249 27.2986 16.097 27.242 15.0666C27.1853 14.0363 26.8971 13.0273 26.3966 12.1073C25.8962 11.1874 25.1951 10.3777 24.3403 9.73264C23.4856 9.08755 22.4969 8.62196 21.4407 8.36707C20.3845 8.11218 19.2851 8.0739 18.2162 8.25478L18.5159 9.77206C19.3571 9.62971 20.2223 9.65985 21.0535 9.86043C21.8848 10.061 22.6628 10.4274 23.3354 10.9351C24.0081 11.4428 24.5598 12.0799 24.9537 12.8039C25.3475 13.5279 25.5743 14.3219 25.6189 15.1328C25.6635 15.9436 25.5249 16.7526 25.2123 17.5053C24.8997 18.2581 24.4203 18.9373 23.8064 19.4974C23.1925 20.0575 22.4581 20.4856 21.6527 20.7529C20.8472 21.0202 19.9891 21.1205 19.1361 21.0472L19.0042 22.5821Z" fill="white"/>
+                            </svg>                                                           
+                        </div>       
+                        <div class="mute lg:py-2 py-4 cursor-pointer hidden p-2" style="transition:all .4s cubic-bezier(1, 0, 0, 1);">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="15" cy="15" r="15" fill="black"/>
+                                <path d="M28 15C28 22.1797 22.1797 28 15 28C7.8203 28 2 22.1797 2 15C2 7.8203 7.8203 2 15 2C22.1797 2 28 7.8203 28 15Z" fill="white"/>
+                                <path d="M14.8374 23.67C15.0254 23.8459 15.2741 23.9425 15.5315 23.9397L17.1303 23.9223C17.6825 23.9163 18.1253 23.4637 18.1193 22.9115L17.9569 7.99991C17.9509 7.44766 17.4983 7.00484 16.9461 7.01086L15.3405 7.02835C15.0871 7.03111 14.8442 7.12997 14.6609 7.30496L6.85635 14.7554C6.44084 15.1521 6.44416 15.8165 6.86362 16.209L14.8374 23.67Z" fill="black"/>
+                                <path d="M5 11C5 10.4477 5.44772 10 6 10H8C8.55228 10 9 10.4477 9 11V20C9 20.5523 8.55228 21 8 21H6C5.44772 21 5 20.5523 5 20V11Z" fill="black"/>
+                                <rect x="20.6472" y="12.2267" width="8" height="1" rx="0.5" transform="rotate(47.1666 20.6472 12.2267)" fill="black"/>
+                                <rect width="8" height="1" rx="0.5" transform="matrix(-0.679869 0.733333 0.733333 0.679869 25.439 12)" fill="black"/>
+                            </svg>                                
+                        </div>       
+                    </div>
+                    <div class="timing2 lg:py-2 absolute h-6 md:relative " style="top: 4px;""></div>
+                    <div class="timing lg:py-2 absolute h-6 md:relative " style="top: 4px; right: 120px;">
+                        00:00/00:00
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- this is made by faraz mohammed also known as thunder blood -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
